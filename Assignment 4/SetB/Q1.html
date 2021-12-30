@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .bor{
+        border: 2px solid black;
+        padding: 10px;
+        display: flex;
+        width: 700px;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    div{
+        font-family:cursive ;
+    }
+    input{
+        margin: 3PX;
+    }
+</style>
+<body>
+    <div class="bor">
+        <div>
+            <center>
+            <div><h1>Feedback Form</h1>
+            <label for="name"> Student Name</label>
+            <input type="text" id="name" placeholder="Enter Your Name">
+        </div>
+        <div>
+            <label for="Email"> Student Name</label>
+            <input type="text" id="Email" placeholder="Enter Your Email">
+        </div>
+        <div>
+            <label for="source">How do you know this Institute</label>
+            <input type="text" id="source">
+        </div>
+        <div>
+            How do you rate the Faculty :-
+            <label for="rate ">Poor</label>
+            <input type="radio" name="rate">
+        
+            <label for="rate ">Very Good</label>
+            <input type="radio" name="rate">
+    
+            <label for="rate ">Good</label>
+            <input type="radio" name="rate">
+            <label for="rate ">Excellent</label>
+            <input type="radio" name="rate">
+        </div>
+            <p>Suggestion for the Betterment of Faculty and Institute</p>
+            <textarea name="long text" id="" cols="50" rows="6"></textarea>
+        <div>
+            <button>send</button>
+            <button>clear</button>
+        </div>
+    </center>
+        </div>
+    </div>
+</body>
+</html>
