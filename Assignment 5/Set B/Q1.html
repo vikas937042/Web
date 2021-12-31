@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Rubik:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="box">
+        <div>
+        <h1 id="title">Credit Card</h1>
+    </div>
+    <div id="cheap">
+    </div>
+    <div id="num">
+        <p>1234</p>
+        <p>5678</p>
+        <p>9012</p>
+        <p>3456</p>
+    </div>
+    <div id="holder">
+        <p>CARDHOLDER</p>
+        <img src="mastercard.png" alt="">
+    </div>
+    </div>    
+</body>
+<style>
+    .box{
+        border: 1px solid black;
+        height: 35vh;
+        width: 28vw;
+        border-radius: 25px;
+        background: radial-gradient(rgb(18, 18, 56),rgb(7, 7, 41));
+    }
+    
+    #title{
+        color: rgb(226, 226, 226);
+        font-family: 'rubik';
+        font-size: 40px;
+        float: right;
+        margin-right: 40px;
+    }
+    #num{
+        display: flex;
+        justify-content: space-around;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+     #num p{
+         font-family: 'cc font', monospace;
+         color:rgb(218, 218, 218);
+         font-size: 40px;
+         margin-top:20px ;
+        }
+        #holder{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: -25px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        #holder p{
+            font-family: 'cc font', monospace;
+            font-size: 22px;
+            /* margin-left: 20px;
+            margin-top: -45px; */
+            margin: 0px;
+            color:rgb(218, 218, 218);
+            
+        }
+        #holder img{
+            width: 55px;
+            height: 35px;
+            /* margin-top: -45px;
+            margin-right: 50px; */
+            margin: 0px;
+        }
+    #cheap{
+        border: 1px solid white;
+        height: 50px;
+        width: 80px;
+        margin-top: 90px;  
+        margin-left: 40px;
+        background: radial-gradient(rgb(253, 227, 78),rgb(255, 225, 57));
+        display: flex;
+        border: 0px;
+        border-radius: 10px;
+        
+    }
+    #cheapbox{
+        height: 17px;
+        width: 20px;
+        border: 0.1px solid rgb(27, 27, 27);
+        border-radius: 3px;
+        margin: auto;
+        
+    }
+</style>
+</html>

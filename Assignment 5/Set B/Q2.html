@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mid">
+    <form action="action.php">
+    <div id="box">
+        <h1>Pay Now</h1>
+        <div id="list">
+            <div class="fradio">
+                <input type="radio" name="ch">
+                <label for="ch">Credit or Debit Card</label>
+                <img src="mastercard.png" alt="mastercard">
+                <img src="visa.png" alt="mastercard">
+            </div>
+            <div>
+                <input type="radio" name="ch" id="">
+                <label for="ch">Pay with Net Banking</label>
+            </div>
+            <div class="dim">
+                <input type="radio" name="ch">
+                <label for="ch">PayPal</label>
+                <img src="paypal.png" alt="paypal">
+            </div>
+            <div>
+                <input type="radio" name="ch" id="">
+                <label for="ch">Pay by Mobile Using Local Methods</label>
+            </div>
+            <div id="box2">
+                <input class="name" type="text" placeholder="Name on Card">
+                <input  class="name" type="number" placeholder="Card Number">
+                <div>
+                    <select name="month">
+                        <option value="January"  selected>January</option>
+                        <option value="">February</option>
+                        <option value="">March</option>
+                        <option value="">April</option>
+                        <option value="">May</option>
+                        <option value="">June</option>
+                        <option value="">July</option>
+                        <option value="">August</option>
+                        <option value="">September</option>
+                        <option value="">October</option>
+                        <option value="">November</option>
+                        <option value="">December</option>
+                    </select>
+                    <input  id="year" type="year" placeholder="YYYY">
+                    <input  id="code" type="number" placeholder="Security code">
+                </div>
+                <p>By completing Your Purchase you Agree To These <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+
+        <center><button>Complete Payment</button></center>
+    </div>
+</form>
+</div>
+</body>
+<style>
+    #mid{
+        display: flex;
+        justify-content: center;
+    }
+    input{
+        font-weight: bold;
+    }
+    h1{
+        margin-left: 5px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+   label{
+       font-weight: bold;
+       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   }
+    button{
+        margin: 7px;
+    }
+    a{
+        text-decoration: none;
+        color: rgb(19, 131, 175);
+    }
+    .name{
+        width: 260px;
+        margin: 5px;
+    }
+    #year    
+    {
+        width: 80px;
+    }
+    #code{
+        width: 80px;
+    }
+    #box2{
+        border: 1px solid black;
+        width: 38vw;
+        height: 200px;
+        /* margin: 5px; */
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(240, 240, 240);
+        border: 1px solid rgb(209, 208, 208);
+        border-radius: 10px;
+    }
+    
+    .fradio{
+        display: flex;
+        align-items: center;
+    }
+    .dim{
+        display: flex;
+        align-items: center;
+    }
+    div:nth-child(3) img{
+        width: 100px;
+    }
+    
+    #list div img{
+        width: 40px;
+        height: 28px;
+        margin: 10px;
+    }
+    #box{
+        border: 1px solid rgb(138, 138, 138);
+        height: 75vh;
+        width: 40vw;
+        border-radius: 10px;
+    }
+</style>
+</html>

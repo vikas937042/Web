@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+    <script>
+        let input=parseInt(prompt('enter a number'));
+        let src=input;
+        let rem=0;
+        let token=[0,1];
+        let sum=0;
+        let cnt=0;
+        for(let i=0;input!=0;i++,cnt++)
+        {
+            rem=input%10;
+            token[i]=rem;
+            input=parseInt(input/10);
+        }
+        let temp=0;
+        for(let i=0;i<cnt;i++)
+        {
+            temp=parseInt(token[i]);
+            sum=sum+(temp*temp*temp);
+        }
+        console.log(sum);
+        if(sum==src)
+        {
+            console.log("Yes, it is Armstrong number");
+        }
+        else{
+            console.log("No. it is not Armstrong");
+        }
+    </script>
+</html>
