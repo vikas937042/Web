@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="greet"></p>
+    </div>
+</body>
+<style>
+    #greet{
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+        font-weight: bolder;
+        font-family: monospace;
+    }
+</style>
+<script>
+    let now=new Date();
+    let time=now.getHours();
+    if(time>=0 && time<12)
+    {
+        document.getElementById('greet').innerHTML="Good Morning";
+    }
+    else if(time>=12 && time<18)
+    {
+        document.getElementById('greet').innerHTML="Good Afternoon";
+    }
+    else if(time>=18)
+    {
+        document.getElementById('greet').innerHTML="Good Evening";
+    }
+    else{
+        document.getElementById('greet').innerHTML="Good Night";        
+    }
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+</body>
+<script>
+    // let choise=prompt("1.display ana array \n2.sort elements of an array\n3.reverse elements of an array\n4.search a given element in an array");
+    let choise=prompt("1.Square root\n2.power\nAbsolute number");
+    choise=parseInt(choise);
+    switch (choise) {
+        case 1:
+            let val=prompt('enter avnumber');
+            val=parseInt(val);
+            document.getElementById('result').innerHTML=Math.sqrt(val);
+            break;
+        case 2:
+            let num=prompt('enter a number');
+            let pow=prompt('enter a power');
+            document.getElementById('result').innerHTML=Math.pow(num.pow);
+            break;
+        case 3:
+            let key=prompt('enter a number');
+            val=parseInt(val);
+            document.getElementById('result').innerHTML=Math.abs(key);
+            break;
+        default:
+            document.getElementById('result').innerHTML="invalid choise";                    
+            break;
+    }
+</script>
+</html>
