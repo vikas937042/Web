@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="values"></p>
+    <p id="avg"></p>
+    <p id="max"></p>
+    <p id="min"></p>
+    <p id="sum"> </p>
+</body>
+<script>
+    let arr=[10,30,25,60,65,73,75];
+    arr=arr.sort();
+    document.getElementById('max').innerHTML=arr[6];
+    document.getElementById('values').innerHTML=arr;
+    document.getElementById('min').innerHTML=arr[0];
+    let sum=0;
+    for(let i=0;i<7;i++)
+    {
+        sum+=arr[i];
+    }
+    document.getElementById('avg').innerHTML=Math.abs(sum/7);
+    document.getElementById('sum').innerHTML=sum;
+</script>
+</html>

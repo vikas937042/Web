@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="submit" onclick="swh()">
+</body>
+<script>
+    class Queue{
+        constructor()
+        {
+            this.collection=[];
+            this.front=-1;
+            this.rear=-1;
+        }
+        inqueue()
+        {
+            let data=parseInt(prompt('enter a data'));
+            if(this.front==-1 && this.rear==-1)
+            {
+                this.front++;
+                this.rear++;
+                this.collection[this.front]=data;
+            }
+            else{
+                this.rear++;
+                this.collection[this.rear]=data;
+            }
+        }
+        dequeue()
+        {
+            let data=parseInt(prompt('enter a data'));
+            if(this.front==-1)
+            {
+                console.log("cant delete queue is empty");
+            }
+            else
+            {
+                this.front++;
+            }
+        }
+        display()
+        {
+            for(let i=this.front;i<=this.rear;i++)
+            {
+                console.log(this.collection[i]);
+            }
+        }
+    }
+    class Stack{
+        constructor(){
+            this.list=[];
+            this.top=-1;
+            this.count=0;
+        }
+        add()
+        {
+            let data=parseInt(prompt('enter data'));
+            this.top++;
+            this.list[this.top]=data;
+            this.count++;
+            // return this.count;
+        }
+        delete()
+        {
+            // console.log(this.list[this.top-1]);
+            this.top--;
+            // this.list.reduce(top)
+            // return this.count;
+        }
+
+        display()
+        {
+            for(let i=0;i<=this.top;i++)
+            {
+                console.log(this.list[i]);
+            }
+        }
+    }
+    function swh()
+    {
+        let queue=new Queue();
+        let stack=new Stack();
+        let choise=1;
+        while(choise!=7)
+        {
+            choise=parseInt(prompt('enter a choise'));
+            switch (choise) {
+            case 1:
+                stack.add();
+                break;
+            case 2:
+                stack.delete();
+                break;
+            case 3:
+                stack.display();
+                break;
+            case 4:
+                queue.inqueue();
+                break;
+            case 5:
+                queue.dequeue();
+                break;
+            case 6:
+                queue.display();
+                break;
+        }
+        }
+        
+    }
+</script>
+</html>

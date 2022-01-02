@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //taking birth-date from user
+    let date=prompt("enter a date yyyy/mm/dd");
+    let birth_date=new Date(date);
+    let sincedate=new Date();
+    sincedate=sincedate.getTime();//convert sincedate in milliseconds
+    birth_date=birth_date.getTime();//converting birth_date in milliseconds
+    let age=sincedate-birth_date;
+    age=age/1000/60/60/24/365;//converting age(miliseconds) to years
+    let years=Math.floor(age);
+    let months=(age+"").split(".")[1];//seprating decimal from age
+    console.log(`years = ${years} \n months = ${months}`);
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- const d=new Date(date);
+let msec=d.getTime();
+console.log(msec);
+let ndate=new Date()
+let sec=ndate.getTime();
+console.log(sec);
+let nsec=sec-msec;
+console.log("nsec= "+nsec);
+let l=new Date(nsec);
+console.log(l.getFullYear()); -->
