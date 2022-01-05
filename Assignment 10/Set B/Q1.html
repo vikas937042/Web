@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form action="action.php" target="blank"> -->
+    <div class="center">
+        <div id="outerbox">
+            <div id="choises">
+                <p>1.Square root</p>
+                <p>2.Power</p>
+                <p>3.Absolute value</p>
+            </div>
+            <input type="text" id="ch" placeholder="Enter tour choise">
+            <button type="submit" onclick="ext()">Submit</button>
+            <p id="result" class="ans"></p>
+        </div>
+    </div>
+<!-- </form>  -->
+</body>
+<style>
+    p{
+        margin: 0px;
+        padding: 0px;
+    } 
+    #choises{
+        display: flex;
+        flex-direction: column;
+        padding-left: 0px;
+        float: left;
+        margin: 20px;
+        font-family: cursive;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    input{
+        margin: 5px;
+        padding: 5px;
+        width: 200px;
+        height: 20spx;
+        border-radius: 7px;
+        
+    }
+    .ans{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .center{
+        display: flex;
+        justify-content: center;
+        margin-top: 70px;
+    }
+    button{
+        margin: 20px 0px;
+        font-family: cursive;
+        width: 100px;
+        height: 35px;
+        border: 0px ;
+        border-radius: 7px;
+        background-color: rgb(180, 48, 180);
+        font-weight: bolder;
+        font-size: 15px;
+        color: white;
+    }
+    button:hover{
+        background-color: rgb(153, 40, 153);  
+        color: rgb(241, 241, 241); 
+        cursor: pointer; 
+    }
+    #outerbox{
+        margin-top: 20px;
+        width: 25vw;
+        height: 40vh;
+        background-color: rgb(250, 245, 245);
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0px 5px 30px 0.4px  rgb(156, 155, 155);
+    }
+</style>
+<script>
+    function ext()
+    {
+        
+        // document.getElementById('result').innerHTML="in";
+        let ch=document.getElementById('ch');
+        ch=ch.value;
+        let chk=/^[A-Za-z]+$/;
+        ch=parseInt(ch);
+        switch (ch) {
+            case 1:
+                let val=prompt('enter value');
+                if(!val.match(chk))
+                {
+                    val=parseInt(val);
+                    val=Math.sqrt(val);
+                    document.getElementById('result').innerHTML=val;
+                }
+                else{
+                    alert('Please Enter Only Values');
+                }
+                break;
+            case 2:
+                let num=prompt('enter a value');
+                let pow=prompt('enter the power');
+                if(!num.match(chk) || pow.match(chk))
+                {
+                    num=parseInt(num);
+                    pow=parseInt(pow)
+                    pow=Math.pow(num,pow);
+                    document.getElementById('result').innerHTML=pow;
+                }
+                else{
+                    alert('Please Enter Only Values');
+                }                    
+                break;
+            case 3:
+                let absl=prompt('enter value');
+                console.log(absl);
+                if(!absl.match(chk))
+                {
+                    absl=parseInt(absl);
+                    absl=Math.abs(absl);
+                    document.getElementById('result').innerHTML=absl;
+                }
+                else{
+                    alert('Please Enter Only Values');
+                }
+                break
+        
+            default:
+                alert('please enter valid choise');
+                break;
+        }
+
+    }
+</script>
+</html>

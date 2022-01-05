@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="align"> 
+        <div class="container">
+            <p id="display"></p>
+            <p id="ans"></p>
+            <button onclick="insert(7)"> 7</button>
+            <button onclick="insert(8)"> 8</button>
+            <button onclick="insert(9)"> 9</button>
+            <button onclick="insert('/')"> /</button>
+            <button onclick="insert(4)"> 4</button>
+            <button onclick="insert(5)"> 5</button>
+            <button onclick="insert(6)"> 6</button>
+            <button onclick="insert('*')"> *</button>
+            <button onclick="insert(1)"> 1</button>
+            <button onclick="insert(2)"> 2</button>
+            <button onclick="insert(3)"> 3</button>
+            <button onclick="insert('+')"> +</button>
+            <button onclick="insert('=')"> =</button>
+            <button onclick="insert(0)"> 0</button>
+            <button onclick="insert('-')"> -</button>
+        </div>
+    </div>
+</body>
+<script>
+    let exp=[];//declaring array for importing expresion entered by a user
+    let newexp=[];//declaring array for importing only operands of expression afer seprating operands and operators
+    let opt=[];//declaring array for importing only operators of expression afer seprating operands and operators
+    let text='';
+    function insert(num)
+    {
+        if(num=='=')
+        {
+            calculate();//this function will seprate the operands operators
+        }
+        else{
+            text+=num;
+            exp.push(num);
+            // console.log(exp);
+            document.getElementById('display').innerHTML=text;//this will display the values(characters) entered by a user dynamically
+        }
+    }
+    let temp=[];
+    function calculate()
+    {
+        exp.push('+');
+        for(let i=0;i<exp.length;i++)
+        {
+            if(exp[i]=='+' || exp[i]=='-' || exp[i]=='*' || exp[i]=='/')
+            {
+                opt.push(exp[i]);
+                newexp.push(parseInt(text));
+                // console.log(newexp);
+                text='';
+            }
+            else{
+                text+=""+exp[i];
+            }
+        }
+        opt.pop();
+        cal();//this function will calculates the operands result corresponding to its operations(operators)
+    }
+    let i;
+    let j;
+    let result=0;
+    let res=1
+    function cal()
+    {
+        for(i=0,j=1;j<newexp.length;i++,j++)    
+        {
+            console.log(result);
+            console.log(res);
+            if(opt[i]=='+')
+            {
+                result=newexp[i+1]=newexp[i]+newexp[j];
+                document.getElementById('ans').innerHTML=result;
+            }
+            else if(opt[i]=='-')
+            { 
+                result =newexp[i+1]=newexp[i]-newexp[j];                
+                document.getElementById('ans').innerHTML=result;
+            }
+            else if(opt[i]=='*')
+            { 
+                result =newexp[i+1]=newexp[i]*newexp[j];                
+                document.getElementById('ans').innerHTML=result;
+            }
+            else if(opt[i]=='/')
+            {
+                result =newexp[i+1]=newexp[i]/newexp[j];
+                document.getElementById('ans').innerHTML=result;
+            }
+        }
+    }
+</script>
+<style>
+    p{
+        padding-left: 10px;
+        padding-top: 10px;
+        border: 3px solid rgb(199, 198, 198);
+        /* height: 30px; */
+        margin: 1px;
+        border-radius: 10px;
+        font-size: large;
+        font-weight: bold;
+        font-family: cursive;
+        color: rgb(77, 76, 76);
+        /* width: 1fr; */
+    }
+    p:hover{
+        border-color: rgb(170, 166, 166);
+    }
+    .align{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    button{
+        background-color: rgb(219, 71, 219);
+        color: white;
+        border: 0px;
+        border-radius: 5px;
+        height: 50px;
+        margin: 1px;
+        font-family: cursive;
+        font-size: large;
+        box-shadow: 0px 10px 15px 0.4px  rgb(109, 0, 109);
+    }
+    button:hover{
+        background-color: rgb(153, 40, 153);  
+        color: rgb(241, 241, 241); 
+        cursor: pointer; 
+        font-size: x-large;
+    }
+    .container{
+        display: grid;
+        width: 30vw;
+        background-color: rgb(255, 241, 255);
+        border-radius: 35px;
+        /* box-shadow: 0px 15px 50px 0.4px  rgb(109, 0, 109); */
+        box-shadow: 0px 20px 45px 0.4px  rgb(129, 129, 129);
+        /* box-shadow: ; */
+        /* border: 1px solid black; */
+        padding: 20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 3fr 1fr 1fr 1fr;
+        column-gap: 13px;
+        row-gap: 13px;
+    }
+    #display{
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+</style>
+</html>
