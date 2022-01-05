@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validate()" action="https://www.google.com" target="blank" >
+    <div id="cen">
+      <div id="outerbox">
+        <h1>Register</h1>
+        <hr>
+            <div id="innerbox">
+                <div class="align">
+                        <label for="mail">Enter Your Gmail :-</label>
+                    <input type="text" placeholder="Enter Gmail" id="gmail" name="mail">
+                </div>
+                <div class="align">
+                    <label for="pwd">Password :- </label>
+                    <input type="password" placeholder="Password" id="pas" name="pwd">
+                </div>
+                <div class="align">
+                    <label for="cpwd">Confirm password :-</label>
+                    <input type="password" placeholder="Confirm Password" id="cpas" name="cpwd">
+                </div>
+            </div>
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+</form>
+</body>
+<script>
+    function validate(){
+        let gamil=document.getElementById("gmail");
+        let password=document.getElementById("pas");
+        let con_password=document.getElementById("cpas");
+        password=password.value;
+        con_password=con_password.value;
+        name=name+"";
+        let chk=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(gmail.value=="" || password.value=="" ||con_password.value=="")
+        { 
+            console.log('in')
+            alert('input cannot be empty');
+            return false;
+        }
+        if(gmail.value.match(chk) )
+        {
+            if(password.localeCompare(con_password))
+            {
+                alert('password is incorrect');
+                return false;
+            }
+
+        }
+        else{
+            alert('Gmail format is not correct');
+            return false;
+        }
+        
+    }
+</script>
+<style>
+    button{
+        margin: 40px 0px;
+        font-family: cursive;
+        width: 100px;
+        height: 35px;
+        border: 0px ;
+        border-radius: 7px;
+        background-color: rgb(180, 48, 180);
+        font-weight: bolder;
+        font-size: 15px;
+        color: white;
+    }
+    button:hover{
+        background-color: rgb(153, 40, 153);  
+        color: rgb(241, 241, 241); 
+        cursor: pointer; 
+    }
+    h1{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bold;
+    }
+    #gmail{
+        margin-left: 30px;
+    }
+    #pas{
+        margin-left: 80px;
+    }
+    #cpas{
+        margin-left: 22px;
+    }
+    .align{
+        display: flex;
+        align-items: center;
+        float: left;
+        /* border: 1px solid black; */
+        width: 380px;
+    }
+    #outerbox{
+        /* border:1px solid black ; */
+        margin-top: 150px;
+        width: 25vw;
+        height: 40vh;
+        padding: 20px;
+        text-align: center;
+        background-color: rgb(250, 245, 245);
+        border-radius: 25px;
+        box-shadow: 0px 5px 30px 0.4px  rgb(156, 155, 155);
+    }
+    input{
+        margin: 5px;
+        padding: 5px;
+        width: 200px;
+        height: 20spx;
+        border-radius: 7px;
+        
+    }
+    #innerbox{
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+    }
+    #cen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    </style>
+</html>
