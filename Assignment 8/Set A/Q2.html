@@ -10,23 +10,32 @@
     
 </body>
 <script>
-    let num=parseInt(prompt('enter a positive integer'));
-    let sum=0;
-    let remainder=0;
-    for(let i=1;i<num;i++)
+    const number = parseInt(prompt("Enter a positive number: "));
+    let isPrime = true;
+    if (number === 1)
     {
-        remainder=num%i;
-        if(remainder==0)
+        console.log("1 is neither prime nor composite number.");
+    }
+    else if (number > 1)
+    {
+        for (let i = 2; i < number; i++) 
         {
-            sum=sum+i;
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
         }
-        if(sum==num)
+        if (isPrime) 
         {
-            console.log("prime number");
+            console.log(`${number} is a prime number`);
+        } else 
+        {
+            console.log(`${number} is a not prime number`);
         }
-        else{
-            console.log("not prima number");
-        }
+    }
+    else 
+    {
+        console.log("The number is not a prime number.");
     }
 </script>
 </html>
